@@ -1,5 +1,6 @@
 const {createServer} = require('http');
 const fs = require('fs');
+const path = require('path');
 
 const server = createServer((req, res) => {
     fs.readFile('index.html','utf8', (err, data) => {
