@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const server = createServer((req, res) => {
-    fs.readFile('index.html','utf8', (err, data) => {
+    const filePath = path.join(__dirname, 'index.html');
+    fs.readFile(filePath,'utf8', (err, data) => {
         if(err){
             res.writeHead(500, {'Content-Type': 'text/plain'});
             return res.end('Internal Server Error');
